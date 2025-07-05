@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Passionné des Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600">MonPortfolio</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">À propos</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Compétences</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Projets</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">À propos</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Compétences</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Projets</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Passionné des technologies</h1>
+                    <p class="text-xl mb-8">Je transforme des idées en projets fonctionnels à la croisée des réseaux, du développement et de l'embarqué.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Voir mes projets</a>
+                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition duration-300">Me contacter</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-white rounded-full p-2 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Profile" class="w-64 h-64 rounded-full object-cover border-4 border-blue-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">À propos de moi</h2>
+            <div class="md:flex md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <p class="text-lg mb-6">Je suis un passionné des technologies avec un esprit curieux et méthodique. Mon parcours se construit à la croisée des réseaux informatiques, de l'automatisation d'infrastructure, de la programmation embarquée et du développement web et logiciel.</p>
+                    <p class="text-lg mb-6">J'aime comprendre les choses en profondeur, résoudre des problèmes techniques concrets, et transformer des idées en projets fonctionnels.</p>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Informations personnelles</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-phone-alt mr-3 text-blue-600"></i> <span>Téléphone : 0970804801</span></li>
+                            <li class="flex items-center"><i class="fas fa-envelope mr-3 text-blue-600"></i> <span>Email : [à compléter]</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Objectif professionnel</h3>
+                    <p class="mb-6">Développer des solutions concrètes dans :</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>L'automatisation d'infrastructures informatiques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>La création de systèmes embarqués</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Le développement web orienté utilisateurs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>La configuration et le dépannage réseau</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Compétences techniques</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Infrastructure & Réseaux -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-server text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Infrastructure & Réseaux</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 text-xs mt-1 mr-2"></i>
+                            <span>Infrastructure as Code (IaC) avec Terraform</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 text-xs mt-1 mr-2"></i>
+                            <span>Configuration automatisée de serveurs Ubuntu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 text-xs mt-1 mr-2"></i>
+                            <span>Déploiement de services comme Apache2</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 text-xs mt-1 mr-2"></i>
+                            <span>Configuration d'équipements réseau (Cisco, GNS3)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Développement logiciel -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-code text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Développement logiciel</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-purple-500 text-xs mt-1 mr-2"></i>
+                            <span>Programmation en Python (ex. gestion de bibliothèque)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-purple-500 text-xs mt-1 mr-2"></i>
+                            <span>Programmation en C (version CLI du système de bibliothèque)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-purple-500 text-xs mt-1 mr-2"></i>
+                            <span>Résolution d'erreurs, gestion mémoire, logique système</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Développement web -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-globe text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Développement web</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 text-xs mt-1 mr-2"></i>
+                            <span>Création de sites vitrines (restaurants, écoles, magasins)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 text-xs mt-1 mr-2"></i>
+                            <span>Intégration HTML/CSS, structure de pages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 text-xs mt-1 mr-2"></i>
+                            <span>Contenu dynamique</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Embarqué & Simulation -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-microchip text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Embarqué & Simulation</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 text-xs mt-1 mr-2"></i>
+                            <span>Programmation Arduino : capteurs, LEDs, logique conditionnelle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-yellow-500 text-xs mt-1 mr-2"></i>
+                            <span>Simulation avec Proteus (génération et test de fichiers HEX)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Outils utilisés -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-tools text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Outils utilisés</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Terraform</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Bash/Shell</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">GNS3</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">PuTTY</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">SSH</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Arduino IDE</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Proteus</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">C</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">HTML</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Projets réalisés</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Infrastructure avec Terraform -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-cloud text-blue-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Infrastructure avec Terraform</h3>
+                        <p class="text-gray-600 mb-4">Provision automatique d'un serveur Apache2 sur Ubuntu via SSH</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Terraform</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Ubuntu</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Apache2</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition duration-300">
+                        <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Gestion de bibliothèque (Python) -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fab fa-python text-purple-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Gestion de bibliothèque (Python)</h3>
+                        <p class="text-gray-600 mb-4">Interface simplifiée pour gérer emprunts, retours et inventaire</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Interface CLI</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition duration-300">
+                        <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition duration-300">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Gestion de bibliothèque (C) -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-copyright text-yellow-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Gestion de bibliothèque (C)</h3>
+                        <p class="text-gray-600 mb-4">Version ligne de commande avec structures et fichiers</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Langage C</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Structures</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Fichiers</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition duration-300">
+                        <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-yellow-600 transition duration-300">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Sites web multi-domaines -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-green-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Sites web multi-domaines</h3>
+                        <p class="text-gray-600 mb-4">Sites web pour restaurants, écoles, magasins, etc.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">HTML</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">CSS</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition duration-300">
+                        <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-green-600 transition duration-300">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Projet Arduino capteur + LED -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-lightbulb text-red-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Projet Arduino capteur + LED</h3>
+                        <p class="text-gray-600 mb-4">Lecture de température et réaction par LEDs (simulation Proteus)</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">Arduino</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">Capteurs</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">Proteus</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition duration-300">
+                        <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-red-600 transition duration-300">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Labs GNS3 & SSH -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden relative">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-network-wired text-indigo-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Labs GNS3 & SSH</h3>
+                        <p class="text-gray-600 mb-4">Topologies personnalisées et dépannage réseau avec Cisco IOS</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">GNS3</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">Cisco</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">SSH</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition duration-300">
+                        <a href="#" class="text-white border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">Voir détails</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Contactez-moi</h2>
+            
+            <div class="md:flex md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">Informations de contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-4 text-xl"></i>
+                            <span>0970804801</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-4 text-xl"></i>
+                            <span>[à compléter]</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4">Suivez-moi</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-blue-600 p-3 rounded-full hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-white text-blue-600 p-3 rounded-full hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-white text-blue-600 p-3 rounded-full hover:bg-blue-100 transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent placeholder-white placeholder-opacity-70">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent placeholder-white placeholder-opacity-70">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-50 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent placeholder-white placeholder-opacity-70"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
+                </div>
+                <div class="flex justify-center md:justify-end space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
